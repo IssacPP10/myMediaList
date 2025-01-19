@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
 import { Header } from "@/components/Header";
-import { MediaCard } from "@/components/MediaCard";
 import { MediaForm } from "@/components/MediaForm";
+import { MediaGrid } from "@/components/MediaGrid";
 import { useMedia } from "@/context/MediaContext";
 import { MediaItem } from "@/types/media";
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,7 @@ import {
 import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
-  const { items, addItem, editItem, deleteItem } = useMedia();
+  const { addItem, editItem } = useMedia();
   const { toast } = useToast();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingItem, setEditingItem] = useState<MediaItem | undefined>();
@@ -41,14 +41,6 @@ const Index = () => {
     }
   };
 
-  const handleDelete = (id: string) => {
-    deleteItem(id);
-    toast({
-      title: "Success",
-      description: "Media item deleted successfully",
-    });
-  };
-
   return (
     <div className="min-h-screen pb-8">
       <Header />
@@ -68,19 +60,7 @@ const Index = () => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {items.map(item => (
-            <MediaCard
-              key={item.id}
-              item={item}
-              onEdit={item => {
-                setEditingItem(item);
-                setIsModalOpen(true);
-              }}
-              onDelete={handleDelete}
-            />
-          ))}
-        </div>
+        <MediaGrid />
 
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
           <DialogContent className="sm:max-w-[425px]">
