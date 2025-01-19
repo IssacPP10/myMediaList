@@ -15,6 +15,7 @@ const defaultItems: MediaItem[] = [
     type: "anime",
     rating: 9,
     imageUrl: "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
+    description: "In a world where humanity lives inside cities surrounded by enormous walls due to the Titans, giant humanoid creatures who devour humans seemingly without reason.",
   },
   {
     id: "2",
@@ -22,6 +23,7 @@ const defaultItems: MediaItem[] = [
     type: "manga",
     rating: 10,
     imageUrl: "https://cdn.myanimelist.net/images/manga/2/253146.jpg",
+    description: "Follow Monkey D. Luffy and his swashbuckling crew in their search for the ultimate treasure, the One Piece.",
   },
   {
     id: "3",
@@ -29,6 +31,7 @@ const defaultItems: MediaItem[] = [
     type: "novel",
     rating: 8,
     imageUrl: "https://cdn.myanimelist.net/images/manga/1/115009.jpg",
+    description: "In the year 2022, virtual reality has progressed by leaps and bounds, and a massive online role-playing game called Sword Art Online (SAO) is launched.",
   },
 ];
 
