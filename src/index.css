@@ -80,5 +80,5 @@
 }
 
 .media-card {
-  @apply bg-card hover:animate-card-hover transition-all duration-300;
+  @apply bg-card hover:animate-card-hover transition-all duration-300 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] dark:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.5)];
 }

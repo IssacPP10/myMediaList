@@ -44,11 +44,14 @@ export function MediaCard({ item, onEdit, onDelete }: MediaCardProps) {
       <CardContent className="p-4">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-bold text-lg line-clamp-2">{item.name}</h3>
-          <span className="flex items-center gap-1.5 text-sm text-secondary capitalize shrink-0">
+          <span className="flex items-center gap-1.5 text-sm text-muted-foreground capitalize shrink-0">
             <TypeIcon type={item.type} />
             {item.type}
           </span>
         </div>
+        <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+          {item.description}
+        </p>
       </CardContent>
       <CardFooter className="p-4 pt-0 flex justify-end gap-2">
         <Button
