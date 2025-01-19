@@ -8,12 +8,36 @@ interface MediaContextType {
   deleteItem: (id: string) => void;
 }
 
+const defaultItems: MediaItem[] = [
+  {
+    id: "1",
+    name: "Attack on Titan",
+    type: "anime",
+    rating: 9,
+    imageUrl: "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
+  },
+  {
+    id: "2",
+    name: "One Piece",
+    type: "manga",
+    rating: 10,
+    imageUrl: "https://cdn.myanimelist.net/images/manga/2/253146.jpg",
+  },
+  {
+    id: "3",
+    name: "Sword Art Online",
+    type: "novel",
+    rating: 8,
+    imageUrl: "https://cdn.myanimelist.net/images/manga/1/115009.jpg",
+  },
+];
+
 const MediaContext = createContext<MediaContextType | undefined>(undefined);
 
 export function MediaProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<MediaItem[]>(() => {
     const stored = localStorage.getItem("mediaItems");
-    return stored ? JSON.parse(stored) : [];
+    return stored ? JSON.parse(stored) : defaultItems;
   });
 
   useEffect(() => {
