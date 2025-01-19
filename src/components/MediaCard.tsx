@@ -34,7 +34,7 @@ export function MediaCard({ item, onEdit, onDelete }: MediaCardProps) {
         <img
           src={item.imageUrl}
           alt={item.name}
-          className="w-full h-64 object-cover"
+          className="w-full h-96 object-cover"
         />
         <div className="absolute top-2 right-2 bg-background/80 backdrop-blur-sm rounded-full px-3 py-1.5 flex items-center gap-1.5">
           <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
@@ -58,7 +58,7 @@ export function MediaCard({ item, onEdit, onDelete }: MediaCardProps) {
           variant="ghost"
           size="icon"
           onClick={() => onEdit(item)}
-          className="hover:bg-secondary/20"
+          className="hover:bg-secondary/70"
         >
           <Edit className="h-4 w-4" />
         </Button>
@@ -66,7 +66,7 @@ export function MediaCard({ item, onEdit, onDelete }: MediaCardProps) {
           variant="ghost"
           size="icon"
           onClick={() => onDelete(item.id)}
-          className="hover:bg-destructive/20"
+          className="hover:bg-destructive/70"
         >
           <Trash2 className="h-4 w-4" />
         </Button>

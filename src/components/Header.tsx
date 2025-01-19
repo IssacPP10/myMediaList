@@ -27,7 +27,7 @@ export function Header() {
               variant="ghost"
               size="icon"
               onClick={() => setShowAbout(true)}
-              className="text-secondary hover:text-secondary/80"
+              className="text-secondary hover:text-white"
             >
               <Info className="h-5 w-5" />
             </Button>
@@ -35,7 +35,7 @@ export function Header() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="text-secondary hover:text-secondary/80"
+              className="text-secondary hover:text-white"
             >
               {theme === "dark" ? (
                 <Sun className="h-5 w-5" />
@@ -86,7 +86,7 @@ export function Header() {
                       GitHub
                     </a>
                     <a
-                      href="https://linkedin.com/in/issacpp10"
+                      href="https://www.linkedin.com/in/issac-puentes/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-blue-500 hover:underline"
